@@ -1,0 +1,100 @@
+/*backgrounds*/
+#body1 {
+	background: url("../../images/Intro_Page.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#body2 {
+	background-color: #2c343d;
+}
+
+#logo {
+	width: 200px;
+	margin-top: 40px;
+}
+
+/*homepage form*/
+#inputForm {
+	color: white;
+	text-align: center;
+}
+
+#sel1, #sel2, #sel3 {
+	height: 30px;
+}
+
+.form-group {
+	font-family: 'Poiret One', cursive;
+	font-size: 16px;
+	margin-top: 450px;
+}
+
+.form-control {
+	font-family: helvetica;
+	font-size: 14px;
+	margin-left: 10px;
+	height: 30px;
+}
+
+label {
+	margin-left: 40px;
+}
+
+/*submit button*/
+.btn {
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
+	font-size: 14px;
+	color: white;
+	margin-top: 450px;
+	margin-left: 40px;
+	height: 30px;
+}
+
+/*carousels*/
+.carousel-inner {
+margin
+}
+
+.d-block {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.carousel-control-prev {
+	left: -150px;
+	color: black;
+}
+
+.carousel-control-next {
+	right: -150px;
+}
+
+
+/*glyphicon
+/*@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-calendar:before {
+  content: "\e109";
+}
