@@ -7,25 +7,43 @@
 </head>
 
 <body>
+  <div class="container">
+    <h1>Ticketmaster Search</h1>
+    <div id="result-view"></div>
+    <form id="form">
+      <label for="keyword-input">Search for an event</label>
+      <input type="text" id="keyword-input"><br>
+      <label for="area-input">zip code</label>
+      <input type="text" id="area-input"><br>
+      <label for="date-input">date</label>
+      <input type="text" id="date-input"><br>
+      <input id="find-event" type="submit" value="Search">
+    </form>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    
+    $("#find-event").on("click", function(event) {
+
+    event.preventDefault();
+    var keyword = $("#keyword-input").val();
+    var area= $("#area-input").val();
+    var date= $("#date-input").val();
+    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword="+keyword+"&postalCode="+area+"&startDateTime="+date+"&dmaId=324&countryCode=US&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z";
+
     $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z",
-    //Get a list of all events in the United States https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z
-    //Search for music events in the Los Angeles area https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z
+    url: queryURL,
     async:true,
     dataType: "json",
     success: function(json) {
                 console.log(json);
-                // Parse the response.
-                // Do other things.
+                $("#result-view").text(JSON.stringify(json));
              },
     error: function(xhr, status, err) {
                 // This time, we do not end up here!
              }
     //for more information & get Query parameters: http://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2
+    });
     });
   </script>
 
