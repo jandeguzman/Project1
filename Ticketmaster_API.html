@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ticketmaster API</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    
+    $.ajax({
+    type:"GET",
+    url:"https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z",
+    //Get a list of all events in the United States https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z
+    //Search for music events in the Los Angeles area https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z
+    async:true,
+    dataType: "json",
+    success: function(json) {
+                console.log(json);
+                // Parse the response.
+                // Do other things.
+             },
+    error: function(xhr, status, err) {
+                // This time, we do not end up here!
+             }
+    //for more information & get Query parameters: http://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2
+    });
+  </script>
+
+</body>
+
+</html>
