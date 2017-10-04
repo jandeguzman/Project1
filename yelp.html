@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yelp API</title>
+</head>
+<body>
+
+	<form id="tv-form">
+      <label for="tv-input">Enter Yelp Search Parameter</label>
+      <br>
+      <input type="text" id="search"><br><br>
+      <input type="text" id="area"><br><br>
+      <input id="term" type="submit" value="Submit">
+    </form>
+
+<script src="https://storage.googleapis.com/code-snippets/rapidapi.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+$(document).ready(function() {
+
+var input; 
+
+
+function captain () {
+var rapid = new RapidAPI("default-application_59d047ace4b0b0cacf7cd159", "a0a1fa0b-9987-4b27-b004-aab10d3f2c95");
+
+rapid.call('YelpAPI', 'getBusinesses', { 
+	'accessToken': 'XagdwX1Mk3Zi8cr73ZyrJHSRy7FIC_6m5xNsYl1DpKzyhT4VlmIHJFa_-lmcWIqnqQmj0Ia-x9lW1GyLShgX3j_DlufYq4oNAnrl7oHMUPlKwEmemBmKRkMghvTSWXYx',
+	'term': 'food',
+	'location': input,
+	'price': '1',
+
+}).on('success', function (payload) {
+	 console.log(payload);
+}).on('error', function (payload) {
+	 console.log("didn't work")
+});
+
+}
+
+
+$("#term").on("click", function(event) {
+      event.preventDefault();
+
+input = $("#search").val().trim();
+console.log(input);
+
+captain();
+
+});
+
+});
+  </script>
+</body>
+</html>
