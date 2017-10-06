@@ -4,31 +4,37 @@
 <head>
   <meta charset="utf-8">
   <title>Ticketmaster API</title>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
 <body>
   <div class="container">
     <h1>Ticketmaster Search</h1>
-    <div id="result-view"></div>
     <form id="form">
-      <label for="keyword-input">Search for an event</label>
-      <input type="text" id="keyword-input"><br>
+      <label for="event-input">Search for an event</label>
+      <input type="text" id="event-input"><br>
       <label for="area-input">zip code</label>
       <input type="text" id="area-input"><br>
-      <label for="date-input">date</label>
-      <input type="text" id="date-input"><br>
+      <label for="datepicker">date</label>
+      <input type="text" id="datepicker"><br>
       <input id="find-event" type="submit" value="Search">
     </form>
+    <div id="result-view"></div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
     $("#find-event").on("click", function(event) {
 
     event.preventDefault();
-    var keyword = $("#keyword-input").val();
+    var event = $("#event-input").val();
     var area= $("#area-input").val();
-    var date= $("#date-input").val();
-    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword="+keyword+"&postalCode="+area+"&startDateTime="+date+"&dmaId=324&countryCode=US&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z";
+    var date= $("#datepicker").val();
+    var startDate= moment(date).format("YYYY-MM-DD")+"T00:00:00Z";
+    console.log(startDate);
+    var endDate= moment(date).add(1,"days").format("YYYY-MM-DD")+"T00:00:00Z";
+    console.log(endDate);
+    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName="+
+    event+"&postalCode="+area+"&startDateTime="+startDate+"&endDateTime="+endDate+"&dmaId=324&countryCode=US&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z";
 
     $.ajax({
     type:"GET",
@@ -37,7 +43,10 @@
     dataType: "json",
     success: function(json) {
                 console.log(json);
-                $("#result-view").text(JSON.stringify(json));
+                  for(var i=0; i<10; i++) {
+                    $("#result-view").append("<p>"+json._embedded.events[i].name+"</p><a target='_blank' href="
+                      +json._embedded.events[i].url+"><img src="+json._embedded.events[i].images[0].url+" style='width:320px;height:320px;'></a>");
+                  }
              },
     error: function(xhr, status, err) {
                 // This time, we do not end up here!
@@ -45,6 +54,7 @@
     //for more information & get Query parameters: http://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2
     });
     });
+
   </script>
 
 </body>
