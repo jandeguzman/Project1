@@ -1,11 +1,3 @@
-/*!
- * Local Venue Search powered by Foursquare and Google Maps w/ Retina Support
- * Author: Nick Rivers @nickthedev @blueprinttweets
- * Company: Blueprint
- * Feel free to use, modify as you please. Follow us on twitter. :)
- */
-
-
 $(function() {
 	var lat = "";
     var lng = "";
@@ -17,6 +9,8 @@ $(function() {
 	var rating = "";
 	var icon = "";
 	var address = "";
+	var near = "";
+	     $("#map").hide();
 	
 	$("#query").click(function(){
 		$(this).val("");
@@ -52,6 +46,7 @@ $(function() {
 	function getVenues() {
 		$.ajax({
 	  		type: "GET",
+
 	  		url: "https://api.foursquare.com/v2/venues/explore?ll="+lat+","+lng+"&client_id=X3LQXKCKBKP1TRFD0QU5YUJSY20DUZVDPV2QSSKRI5K0FY55&client_secret=RLS04XT1HJ5ZU5NISP03WTQT04SR05XXKQTSRWFKLEJ5E424&v=20130619&query="+$("#query").val()+"",
 	  		success: function(data) {
 				$("#venues").show();
