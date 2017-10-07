@@ -1,17 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Yelp API</title>
+  <title>Yelp API</title>
 </head>
 <body>
 
-	<form id="tv-form">
-      <label for="tv-input">Enter Yelp Search Parameter</label>
-      <br>
-      <input type="text" id="search"><br><br>
-      <input type="text" id="price"><br><br>
-      <input id="term" type="submit" value="Submit">
-    </form>
+<div class="container" id="inputForm">
+        <form class="form-inline">
+<!--             <span>We're feeling </span>
+            <div class="dropdown dropdown-nav-filter open">
+                <a class="dropdown-filter-select" data-toggle="dropdown" href="#">
+                    <span id="feeling">adventurous</span>
+                    <i class="fa fa-caret-down">
+                    </i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-place">
+                    <li data-value="laid-back" data-name="Laid-back">
+                    <a href="#">Laid-back</a>
+                    </li>
+                </ul>
+            </div> -->
+            <div class="form-group">
+                <label for="sel1">FEELING</label>
+                <select class="form-control" id="sel1">
+                    <option>Laid-back</option>
+                    <option>Adventurous</option>
+                    <option>Classy</option>
+                    <option>Romantic</option>
+                    <option>Wild</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="sel2">BUDGET</label>
+                <select class="form-control" id="sel2">
+                    <option class="budgetInput">Under $25</option>
+                    <option class="budgetInput">$25-$50</option>
+                    <option class="budgetInput">$50-$100</option>
+                    <option class="budgetInput">Ballin' Out Tonight</option>
+                </select>
+            </div>
+            <div class="form-group">
+                 <label for="sel3">AREA</label>
+                 <select class="form-control" id="sel3">
+                    <option>Downtown LA</option>
+                    <option>The Valley</option>
+                    <option>Hollywood</option>
+                    <option>The Westside</option>
+                    <option>Beach Cities</option>
+                 </select>
+            </div>
+            <div class="form-group">
+                <label>DATE</label>
+                <div class='input-group date' id='datetimepicker'>
+                <input type='text' class="form-control"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicons-calendar"></span>
+                    </span>
+                 </div>
+            </div>
+            <button class="btn btn-default">submit</button>
+<!--             <a href="index2.html" class="btn btn-default" role="button">PLAN MY DAY>></a> -->
+        </form>
+</div>
+<div class="businesses"></div>
 
 <script src="https://storage.googleapis.com/code-snippets/rapidapi.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -19,37 +70,89 @@
 
 $(document).ready(function() {
 
-var input; 
+// var location = $("#sel3 option:selected").text();
+// var budget = $("#sel2 option:selected").text();
+// var input; 
 
+var results;
+var feeling = $("#sel1 :selected").text();
+console.log(feeling);
+var budget = $("#sel2 :selected").text();
+console.log(budget);
+var location = $("#sel3 :selected").text();
+console.log(location);
+
+yelpBudget();
 
 function captain () {
 var rapid = new RapidAPI("default-application_59d047ace4b0b0cacf7cd159", "a0a1fa0b-9987-4b27-b004-aab10d3f2c95");
 
 rapid.call('YelpAPI', 'getBusinesses', { 
-	'accessToken': 'XagdwX1Mk3Zi8cr73ZyrJHSRy7FIC_6m5xNsYl1DpKzyhT4VlmIHJFa_-lmcWIqnqQmj0Ia-x9lW1GyLShgX3j_DlufYq4oNAnrl7oHMUPlKwEmemBmKRkMghvTSWXYx',
-	'term': 'food',
-	'location': input,
-	'price': price,
+    'accessToken': 'XagdwX1Mk3Zi8cr73ZyrJHSRy7FIC_6m5xNsYl1DpKzyhT4VlmIHJFa_-lmcWIqnqQmj0Ia-x9lW1GyLShgX3j_DlufYq4oNAnrl7oHMUPlKwEmemBmKRkMghvTSWXYx',
+    'term': feeling + " food",
+    'location': location,
+    'price': budget,
+    'limit': 50,
 
 }).on('success', function (payload) {
-	 console.log(payload);
+    console.log(payload);
+    results = payload.businesses;
+          for (var j = 0; j < results.length; j++) {
+                var div = $("<div class='item'>");
+          var image = $("<img>").attr("src", results[j].image_url).attr("height", "100").attr("width", "auto");
+          var p = $("<p>").text(results[j].name);
+          div.append(image);
+          div.append(p);
+          $(".businesses").append(div);
+        }  
 }).on('error', function (payload) {
-	 console.log("didn't work")
+     console.log("didn't work")
 });
 
 }
 
+function yelpBudget(){
+    if (budget === "Under $25") {
+        budget = 1;
+    }
 
-$("#term").on("click", function(event) {
-      event.preventDefault();
+    else if (budget === "$25-$50") {
+      budget = 2;
+    }
 
-input = $("#search").val().trim();
-price = $("#price").val().trim();
-console.log(input);
+    else if (budget === "$50-$100") {
+      budget = 3;
+    }
 
-captain();
+    else if (budget === "Ballin' Out Tonight") {
+      budget = 4;
+    }
+    console.log(budget);
+}
+
+$("#sel1").on("change", function () {
+  feeling = $("#sel1 :selected").text();
+  console.log(feeling + " food");
+});
+
+$("#sel2").on("change", function() {
+    budget = $("#sel2 :selected").text();
+    yelpBudget();
+    console.log(budget);
+});
+
+$("#sel3").on("change", function () {
+  location = $("#sel3 :selected").text();
+  console.log(location);
+});
+
+$(".btn").on("click", function(){
+    event.preventDefault();
+    captain();
 
 });
+
+
 
 });
   </script>
