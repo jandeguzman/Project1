@@ -1,6 +1,6 @@
 /*backgrounds*/
-#body1 {
-	background: url("../../images/Intro_Page.png");
+body {
+	background: url("../../images/background.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -11,7 +11,7 @@
 
 #logo {
 	width: 200px;
-	margin-top: 40px;
+	margin-top: 100px;
 }
 
 /*homepage form*/
@@ -27,7 +27,7 @@
 .form-group {
 	font-family: 'Poiret One', cursive;
 	font-size: 16px;
-	margin-top: 450px;
+	margin-top: 100px;
 }
 
 .form-control {
@@ -39,6 +39,7 @@
 
 label {
 	margin-left: 40px;
+	color: white;
 }
 
 /*submit button*/
@@ -47,19 +48,23 @@ label {
 	font-weight: bold;
 	font-size: 14px;
 	color: white;
-	margin-top: 450px;
+	margin-top: 30px;
 	margin-left: 40px;
 	height: 30px;
 }
 
 /*carousels*/
-.carousel-inner {
-margin
+#container2 {
+	width: 80%;
+}
+
+.carousel {
+	width: 80%%;
 }
 
 .d-block {
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
