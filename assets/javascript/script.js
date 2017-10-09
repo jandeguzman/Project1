@@ -3,7 +3,7 @@ $(document).ready(function() {
 $("#container1").show();
 $("#container2").hide();
 
-$(".btn").on("click", function() {
+$("#submit").on("click", function() {
     // event.preventDefault();
     // captain();
  
