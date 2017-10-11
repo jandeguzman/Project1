@@ -2,7 +2,7 @@ $(function() {
 	var lat = "";
     var lng = "";
 	var appendeddatahtml = "";
-	var arguments = "";
+	// var arguments = "";
 	var str = "";
 	var newstr = "";
 	var phone = "";
@@ -10,15 +10,14 @@ $(function() {
 	var icon = "";
 	var address = "";
 	var near = "";
-    var sidebar = $("#mySidebar");
 
 	$("#map").hide();
 	
-	$("#query").click(function(){
+	$("#sel3").click(function(){
 		$(this).val("");
 	});
 	
-	$("#query").blur(function(){
+	$("#sel3").blur(function(){
 		if ($(this).val() == "") {
 			$(this).val("Example: Happy Hour");
 		}
@@ -30,36 +29,39 @@ $(function() {
 		}
 	});
 	
-	$("#searchform").submit(function(event){
+	$("#submit").click(function(event){
 		event.preventDefault();
-		if (!lat) {
-			navigator.geolocation.getCurrentPosition(getLocation);
+		if ($("#dtla")) {
+			lat = 33
+			lng = -118
+			getVenues();
+		} else if ($("#hollywood")) {
+			lat = 33
+			lng = -118
+			getVenues();
 		} else {
 			getVenues();
 		}
 	});
 	
-	function getLocation(location) {
-	    lat = location.coords.latitude;
-	    lng = location.coords.longitude;
-		getVenues();
-	}
-	
+	// function getLocation(location) {
+	//     lat = location.coords.latitude;
+	//     lng = location.coords.longitude;
+	// 	getVenues();
+	// }
+
 	function getVenues() {
 		$.ajax({
 	  		type: "GET",
 
-	  		url: "https://api.foursquare.com/v2/venues/explore?ll="+lat+","+lng+"&client_id=X3LQXKCKBKP1TRFD0QU5YUJSY20DUZVDPV2QSSKRI5K0FY55&client_secret=RLS04XT1HJ5ZU5NISP03WTQT04SR05XXKQTSRWFKLEJ5E424&v=20130619&query="+$("#query").val()+"",
+	  		url: "https://api.foursquare.com/v2/venues/explore?query=sights&ll="+34+","+-118+"&client_id=X3LQXKCKBKP1TRFD0QU5YUJSY20DUZVDPV2QSSKRI5K0FY55&client_secret=RLS04XT1HJ5ZU5NISP03WTQT04SR05XXKQTSRWFKLEJ5E424&v=20130619&query="+$("#sel3").val()+"",
 	  		success: function(data) {
 				$("#venues").show();
 				var dataobj = data.response.groups[0].items;
 				$("#venues").html("");
+				console.log('foursquaure success',data)
+				console.log(getVenues);
 				
-
-                $("#venues").on("click", function() {
-                	console.log("click");
-                })
-
 				// Rebuild the map using data.
 				var myOptions = {
 					zoom:11,
@@ -100,25 +102,29 @@ $(function() {
 					$("#venues").append(appendeddatahtml);
 					
 					// Build markers
-					var markerImage = {
-					url: '../images/pin2.png',
-					scaledSize: new google.maps.Size(24, 24),
-					origin: new google.maps.Point(0,0),
-					anchor: new google.maps.Point(24/2, 24)
-					},
-					markerOptions = {
-					map: map,
-					position: new google.maps.LatLng(this.venue.location.lat, this.venue.location.lng),
-					title: this.venue.name,
-					animation: google.maps.Animation.DROP,
-					icon: markerImage,
-					optimized: false
-					},
-					marker = new google.maps.Marker(markerOptions)
+					// var markerImage = {
+					// url: '../images/pin2.png',
+					// scaledSize: new google.maps.Size(24, 24),
+					// origin: new google.maps.Point(0,0),
+					// anchor: new google.maps.Point(24/2, 24)
+					// },
+					// markerOptions = {
+					// map: map,
+					// position: new google.maps.LatLng(this.venue.location.lat, this.venue.location.lng),
+					// title: this.venue.name,
+					// animation: google.maps.Animation.DROP,
+					// icon: markerImage,
+					// optimized: false
+					// },
+					// marker = new google.maps.Marker(markerOptions)
 					
 				});
 			}
-		});
+		})
+		.fail(function(err){
+			console.log('foursqure', err)
+		})
+		;
 	}
 	
 	function mapbuild() {
