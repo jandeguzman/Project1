@@ -10,7 +10,9 @@ $(function() {
 	var icon = "";
 	var address = "";
 	var near = "";
-	     $("#map").hide();
+    var sidebar = $("#mySidebar");
+
+	$("#map").hide();
 	
 	$("#query").click(function(){
 		$(this).val("");
@@ -53,6 +55,11 @@ $(function() {
 				var dataobj = data.response.groups[0].items;
 				$("#venues").html("");
 				
+
+                $("#venues").on("click", function() {
+                	console.log("click");
+                })
+
 				// Rebuild the map using data.
 				var myOptions = {
 					zoom:11,

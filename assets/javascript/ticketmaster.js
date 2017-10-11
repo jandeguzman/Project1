@@ -8,6 +8,7 @@ $(".btn").on("click", function(event) {
     var endDate= moment(date).add(1,"days").format("YYYY-MM-DD")+"T00:00:00Z";
     console.log(endDate);
     var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?startDateTime="+startDate+"&endDateTime="+endDate+"&dmaId=324&countryCode=US&apikey=m6OUuGrxlDjIc5oKu54Cpl86M6YaD97z";
+    var sidebar = $("#mySidebar");
         
         $.ajax({
         type:"GET",
@@ -27,6 +28,9 @@ $(".btn").on("click", function(event) {
                         // $("#ticketmaster").append("<p class='eventNames'>"+json._embedded.events[i].name+"</p><a target='_blank' href="
                         //   +json._embedded.events[i].url+"><img src="+json._embedded.events[i].images[0].url+" class='eventImages'></a>");
                       }
+                    $("#events").on("click", function() {
+                        console.log("click");
+                    });
                  },
         error: function(xhr, status, err) {
                     // This time, we do not end up here!
