@@ -36,6 +36,10 @@
                     $("#yelp").append(div);
                 }
 
+                $("#restaurants").on("click", function() {
+                	console.log("click");
+                });
+
             }).on('error', function(payload) {
                 console.log("didn't work")
             });

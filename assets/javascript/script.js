@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-// $("#datepicker").datepicker();
-
 $("#container1").show();
 $("#container2").hide();
 
@@ -13,6 +11,11 @@ $(".btn").on("click", function() {
  $("#container1").hide();
 
 });
-
 // close initial document ready function
 });
+
+$(function () {
+	$("#datepicker").datepicker();
+});
+
+datepicker();
