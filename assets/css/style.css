@@ -117,15 +117,17 @@ label {
 }
 
 /*results page*/
-h3 {
-    font-family: helvetica;
-    font-style: italic;
+h4 {
+    font-family: 'Poiret One', cursive;
     font-weight: lighter;
-    font-size: 18px;
+    font-style: italic;
+    font-size: 16px;
     text-align: center;
-    padding: 10px;
-    margin: 10px;
+/*    padding: 10px;
+    margin: 10px;*/
     color: white;
+    margin-top: 20px;
+    margin-left: 70px;
 }
 
 #dining, #events, #sights {
@@ -155,7 +157,7 @@ h3 {
 
 .resultsContainer {
     margin-top: 30px;
-    margin-right: -50px;
+    margin-left: -50px;
 }
 
 .events {
@@ -241,13 +243,11 @@ section #submit {
 
 .design {
     position: relative;
-/*    z-index: 200;*/
-/*    height: 150px;
-    width: 100%;*/
     overflow-y: auto;
     top: 1px;
     background-color: rgba(255, 255, 255, 0.3);
     display: flex;
+    margin-right: -150px;
 }
 
 .venue {
@@ -307,47 +307,69 @@ section p.quote {
 #mySidebar {
     position: absolute;
     right: 0;
+    margin-right: 80px;
     top: 0;
+    margin-top: 100px;
     height: 1000px;
-    background-opacity: 0.5;
+    background-color: (0, 0, 0, 0.3);
+    width: 300px;
+    height: 500px;
 }
 
 /*sidebar button*/
 #sidebar {
     position: absolute;
     right: 0;
-    margin-right: 130px;
+    margin-right: -85px;
+    margin-bottom: 10px;
     background-color: black;
     color: white;
+    border: none;
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
 }
 
 /*close sidebar button*/
 #close {
     font-family: helvetica;
     font-weight: lighter;
-    font-size: 12px;
+    font-size: 13px;
     background-color: black;
     color: white;
     border: white;
     position: absolute;
     top: 0;
-    margin-left: 10px;
+    right: 0;
+    margin-right: 10px;
     margin-top: 10px;
-
+    padding: 5px;
 }
 
 /*build itinerary button*/
 #send {
     font-family: helvetica;
     font-weight: lighter;
-    font-size: 12px;
-    background-color: #d0d8e0;
-    color: black;
+    font-size: 13px;
+    background-color: #60768c;
+    color: white;
     border: white;
-    margin-left: 10px;
     position: absolute;
-    bottom: 0;
-    margin-bottom: 10px;
+    top: 0;
+    left: 0;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.remove {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-size: 10px;
+    background-color: #eaedef;
+    color: white;
+    border: none;
+    margin: 10px;
 }
 
 /*#mapcontainer {
