@@ -41,7 +41,7 @@ var toDoCount = 0;
 $(document).on("click", "div.resturants", function() {
     var div2 = $("<div>");
     div2.attr("id", "item-" + toDoCount)
-    var button = $("<button>").text("remove").attr("class", "remove").attr("data-to-do", toDoCount);
+    var button = $("<button>").text("x").attr("class", "remove").attr("data-to-do", toDoCount);
     button.attr("data-name", "yelp");
     (button).appendTo(div2);
     $(this).appendTo(div2);
@@ -65,7 +65,7 @@ $(document).on("click", "div.resturants", function() {
 $(document).on("click", "div.events", function() {
     var div2 = $("<div>");
     div2.attr("id", "item-" + toDoCount).attr("data-name", "ticketmaster");
-    var button = $("<button>").text("remove").attr("class", "remove").attr("data-to-do", toDoCount);
+    var button = $("<button>").text("x").attr("class", "remove").attr("data-to-do", toDoCount);
     button.attr("data-name", "ticketmaster");
     (button).appendTo(div2);
     $(this).appendTo(div2);
@@ -87,7 +87,7 @@ $(document).on("click", "div.events", function() {
 $(document).on("click", "div.venue", function() {
     var div2 = $("<div>");
     div2.attr("id", "item-" + toDoCount).attr("data-name", "foursquare");
-    var button = $("<button>").text("remove").attr("class", "remove").attr("data-to-do", toDoCount);
+    var button = $("<button>").text("x").attr("class", "remove").attr("data-to-do", toDoCount);
     button.attr("data-name", "foursquare");
     (button).appendTo(div2);
     $(this).appendTo(div2);
