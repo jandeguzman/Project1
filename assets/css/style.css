@@ -367,7 +367,7 @@ section p.quote {
     font-weight: lighter;
     font-size: 10px;
     background-color: #eaedef;
-    color: white;
+    color: black;
     border: none;
     margin: 10px;
 }
@@ -387,3 +387,41 @@ section p.quote {
     height: 100%;
     border: solid 1px #ccc;
 }*/
+
+/*container 3*/
+.scheduleContainer {
+    font-family: helvetica;
+    color: white;
+    float: left;
+    height: 500px;
+    width: 550px;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+
+.spotifyContainer {
+    font-family: helvetica;
+    color: white;
+    float: right;
+    height: 250px;
+    width: 250px;
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.mapContainer {
+    font-family: helvetica;
+    color: white;
+    float: right;
+    height: 250px;
+    width: 250px;
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+
+
+

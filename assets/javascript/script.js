@@ -2,15 +2,26 @@ $(document).ready(function() {
 
     $("#container1").show();
     $("#container2").hide();
+    $("#container3").hide();
+    $(".scheduleContainer").hide();
+    $(".spotifyContainer").hide();
+    $(".mapContainer").hide();
 
     $(".btn").on("click", function() {
-        // event.preventDefault();
-        // captain();
-
-        $("#container2").show();
         $("#container1").hide();
-
+        $("#container2").show();
+        $("#container3").hide();
     });
+
+    $("#send").on("click", function() {
+	    $("#container1").hide();
+	    $("#container2").hide();
+	    $("#container3").show();
+	    $("#mySidebar").hide();
+	    $(".scheduleContainer").show();
+	    $(".spotifyContainer").show();
+	    $(".mapContainer").show();
+})
 
     function w3_open() {
         $("#mySidebar").css("display", "block");
