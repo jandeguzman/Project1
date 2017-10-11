@@ -28,9 +28,9 @@ $(".btn").on("click", function(event) {
                         // $("#ticketmaster").append("<p class='eventNames'>"+json._embedded.events[i].name+"</p><a target='_blank' href="
                         //   +json._embedded.events[i].url+"><img src="+json._embedded.events[i].images[0].url+" class='eventImages'></a>");
                       }
-                    $("#events").on("click", function() {
+                    $(".events").on("click", function() {
                         console.log("click");
-                    });
+                        $(this).appendTo(mySidebar);
                  },
         error: function(xhr, status, err) {
                     // This time, we do not end up here!
