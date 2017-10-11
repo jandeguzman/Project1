@@ -97,7 +97,7 @@ $(function() {
 						rating = '<span class="rating">'+this.venue.rating+'</span>';
 					}
 					
-					appendeddatahtml = '<div class="venue"><h2 class="foursqH2"><span>'+this.venue.name+'<img class="icon" src="'+icon+'">'+rating;
+					appendeddatahtml = '<div class="venue"><h2 class="foursqH2"><span>'+this.venue.name+'<div class="rating"'+rating+'>';
 					// appendeddatahtml = '<div class="venue"><h2 class="foursqH2"><span>'+this.venue.name+'<img class="icon" src="'+icon+'"> '+rating+'</span></h2>'+address+phone+'</p><p class="foursqP"><strong>Total Checkins:</strong> '+this.venue.stats.checkinsCount+'</p></div>';
 					$("#venues").append(appendeddatahtml);
 					
