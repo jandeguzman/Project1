@@ -117,15 +117,17 @@ label {
 }
 
 /*results page*/
-h3 {
-    font-family: helvetica;
-    font-style: italic;
+h4 {
+    font-family: 'Poiret One', cursive;
     font-weight: lighter;
-    font-size: 18px;
+    font-style: italic;
+    font-size: 16px;
     text-align: center;
-    padding: 10px;
-    margin: 10px;
+/*    padding: 10px;
+    margin: 10px;*/
     color: white;
+    margin-top: 20px;
+    margin-left: 70px;
 }
 
 #dining, #events, #sights {
@@ -141,18 +143,21 @@ h3 {
 
 .restaurants {
     height: 100px;
-    width: 100px;
+/*    width: 100px;*/
+    margin: 10px;
 }
 
 .restaurantNames {
     font-family: helvetica;
     font-size: 12px;
     color: white;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .resultsContainer {
     margin-top: 30px;
-    margin-right: -50px;
+    margin-left: -50px;
 }
 
 .events {
@@ -161,91 +166,16 @@ h3 {
 
 .eventImages {
     height: 100px;
-    width: 100px;
+/*    width: 100px;*/
 }
 
 .eventNames {
     font-family: helvetica;
     font-size: 12px;
-    color: white;    
+    color: white;  
+    margin-left: 10px;
+    margin-right: 10px; 
 }
-
-/*!
- * Local Venue Search powered by Foursquare and Google Maps w/ Retina Support
- * Author: Nick Rivers @nickthedev @blueprinttweets
- * Company: Blueprint
- * Feel free to use, modify as you please. Follow us on twitter. :)
- */
-
-/*html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-font,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
-    margin: 0;
-    padding: 0;
-}
-
-img {
-    border: 0px;
-    font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
-}
-*/
-
-/* Force the vertical scrollbar in FF */
 
 html {
     overflow-y: scroll;
@@ -313,13 +243,11 @@ section #submit {
 
 .design {
     position: relative;
-/*    z-index: 200;*/
-/*    height: 150px;
-    width: 100%;*/
     overflow-y: auto;
     top: 1px;
     background-color: rgba(255, 255, 255, 0.3);
     display: flex;
+    margin-right: -150px;
 }
 
 .venue {
@@ -329,7 +257,6 @@ section #submit {
     margin: 10px;
     height: 140px;
     width: 140px;
-/*    margin: 10px auto 10px auto;*/
     border-radius: 10px;
 }
 
@@ -375,6 +302,76 @@ section p.quote {
     font-size: 10px;
     text-align: left;
 }
+
+/*results sidebar*/
+#mySidebar {
+    position: absolute;
+    right: 0;
+    margin-right: 80px;
+    top: 0;
+    margin-top: 100px;
+    height: 1000px;
+    background-color: (0, 0, 0, 0.3);
+    width: 300px;
+    height: 500px;
+}
+
+/*sidebar button*/
+#sidebar {
+    position: absolute;
+    right: 0;
+    margin-right: -85px;
+    margin-bottom: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+}
+
+/*close sidebar button*/
+#close {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-size: 13px;
+    background-color: black;
+    color: white;
+    border: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+/*build itinerary button*/
+#send {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-size: 13px;
+    background-color: #60768c;
+    color: white;
+    border: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.remove {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-size: 10px;
+    background-color: #eaedef;
+    color: black;
+    border: none;
+    margin: 10px;
+}
+
 /*#mapcontainer {
     width: 100%;
     height: 100%;
@@ -390,3 +387,41 @@ section p.quote {
     height: 100%;
     border: solid 1px #ccc;
 }*/
+
+/*container 3*/
+.scheduleContainer {
+    font-family: helvetica;
+    color: white;
+    float: left;
+    height: 500px;
+    width: 550px;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+
+.spotifyContainer {
+    font-family: helvetica;
+    color: white;
+    float: right;
+    height: 250px;
+    width: 250px;
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.mapContainer {
+    font-family: helvetica;
+    color: white;
+    float: right;
+    height: 250px;
+    width: 250px;
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+
+
+
