@@ -2,7 +2,7 @@
 
 
         var results;
-        var feeling = $("#sel1 :selected").text();
+        var feeling = $("#query :selected").text();
         console.log(feeling);
         var budget = $("#sel2 :selected").text();
         console.log(budget);
@@ -28,7 +28,7 @@
                 results = payload.businesses;
                 for (var j = 0; j < results.length; j++) {
                     div = $("<div>");
-                    div.attr("id", "resturants");
+                    div.attr("class", "resturants");
                     var image = $("<img>").attr("src", results[j].image_url).attr("class", "restaurants");
                     var p = $("<p>").text(results[j].name + " " + results[j].rating).attr("class", "restaurantNames");
                     div.append(image);
@@ -36,15 +36,6 @@
                     $("#yelp").append(div);
                 }
 
-				$(".resturants").on("click", function() {
-	                console.log("click");
-	                var div2 = $("<div>");
-	                var button = $("<button>").text("remove");
-	                (button).appendTo(div2);
-	                $(this).appendTo(div2);
-	                (div2).appendTo(mySidebar);
-            
-      	 	});
 
             }).on('error', function(payload) {
                 console.log("didn't work")
