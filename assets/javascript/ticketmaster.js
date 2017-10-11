@@ -16,7 +16,7 @@ $(".btn").on("click", function(event) {
         dataType: "json",
         success: function(json) {
                     console.log(json);
-                      for(var i=0; i<10; i++) {
+                      for(var i=0; i<20; i++) {
                         div = $("<div>");
                         div.attr("class", "events");
                         var image = $("<img>").attr("src", json._embedded.events[i].images[0].url).attr("class", "eventImages");
