@@ -17,8 +17,15 @@ $(".btn").on("click", function(event) {
         success: function(json) {
                     console.log(json);
                       for(var i=0; i<10; i++) {
-                        $("#ticketmaster").append("<p>"+json._embedded.events[i].name+"</p><a target='_blank' href="
-                          +json._embedded.events[i].url+"><img src="+json._embedded.events[i].images[0].url+" style='width:320px;height:320px;'></a>");
+                        div = $("<div>");
+                        div.attr("class", "events");
+                        var image = $("<img>").attr("src", json._embedded.events[i].images[0].url).attr("class", "eventImages");
+                        var p = $("<p>").text(json._embedded.events[i].name).attr("class", "eventNames");
+                        div.append(image);
+                        div.append(p);
+                        $("#ticketmaster").append(div);
+                        // $("#ticketmaster").append("<p class='eventNames'>"+json._embedded.events[i].name+"</p><a target='_blank' href="
+                        //   +json._embedded.events[i].url+"><img src="+json._embedded.events[i].images[0].url+" class='eventImages'></a>");
                       }
                  },
         error: function(xhr, status, err) {

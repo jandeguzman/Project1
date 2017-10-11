@@ -73,28 +73,10 @@ h3 {
     color: white;
 }
 
-#dining {
+#dining, #events, #sights {
     height: 161px;
     width: 161px;
-    float: left;
-    margin-right: -25px;
-    margin-top: 10px;
-}
-
-#events {
-    height: 161px;
-    width: 161px;
-    float: left;
-    margin-right: -25px;
-    margin-top: 10px;
-}
-
-#sights {
-    height: 161px;
-    width: 161px;
-    float: left;
-    margin-right: -25px;
-    margin-top: 20px;
+    margin-left: -70px;
 }
 
 #resturants {
@@ -115,8 +97,25 @@ h3 {
 }
 
 .resultsContainer {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-right: -50px;
+    max-height: 161px;
+}
+
+.events {
+    margin: 10px;
+}
+
+.eventImages {
+    height: 100px;
+    width: 100px;
+}
+
+.eventNames {
+    font-family: helvetica;
+    font-style: italic;
+    font-size: 12px;
+    color: white;    
 }
 
 /*!
