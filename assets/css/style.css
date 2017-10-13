@@ -307,13 +307,13 @@ section p.quote {
 #mySidebar {
     position: absolute;
     right: 0;
-    margin-right: 80px;
+/*    margin-right: 80px;*/
     top: 0;
-    margin-top: 100px;
+/*    margin-top: 100px;*/
     height: 1000px;
     background-color: (0, 0, 0, 0.3);
-    width: 300px;
-    height: 500px;
+    width: 250px;
+    height: 800px;
 }
 
 /*sidebar button*/
