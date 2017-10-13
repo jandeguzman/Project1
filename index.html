@@ -85,6 +85,8 @@
 <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
     <button id="close">Close &times;</button>
     <button id="send">Build Itinerary</button>
+    <br>
+    <br>
 </div>
 
 <!-- results page // container 2 -->
@@ -160,34 +162,28 @@
 </div>
 
 <!-- page 3 // container 3 -->
-<div class="container3 col-md-12">
-
-<!-- column spacing -->
-	<div class="container col-md-1">
-	</div>
-
-<!-- schedule -->
-	<div class="container scheduleContainer col-md-5">
-		<h5>Schedule Placeholder</h5>
-	</div>
-
-<!-- column spacing -->
-	<div class="container col-md-1">
-	</div>
 
 <!-- spotify playlist and map-->
-	<div class="container col-md-5">
-		<div class="row">
-			<div class="container spotifyContainer">
-				<h5>Spotify Placeholder</sh5>
-			</div>
+<div class="container3 col-md-12">
+<div class="row">
+<!-- column spacing -->
+		<div class="container col-md-1">
 		</div>
-		<div class="row">
-			<div class="container mapContainer">
-				<h5>Map Placeholder</h5>
-			</div>
-		</div>
+
+<!-- schedule -->
+	<div class="container scheduleContainer col-md-5" id="itinerary">
+		<h5>Final Itinerary</h5>
 	</div>
+
+<!-- column spacing -->
+<!-- 		<div class="container col-md-1">
+		</div> -->
+
+<!-- spotify playlist and map-->
+<!-- 	<div class="container col-md-4"> -->
+			<div class="container mapContainer col-md-4">
+			<div id="mapp" style="width:400px;height:400px"></div>
+			</div>
 
 <!-- column spacing -->
 	<div class="container col-md-1">
@@ -212,7 +208,11 @@
 <script type="text/javascript" src="assets/javascript/ticketmaster.js"></script>
 <script type="text/javascript" src="assets/javascript/yelp.js"></script>
 <script type="text/javascript" src="assets/javascript/foursquare.js"></script>
+<script type="text/javascript" src="assets/javascript/maps.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyBQ_8mPMsxvezjGdar8Y_tnm9rSKXM7GDs&sensor=false"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ_8mPMsxvezjGdar8Y_tnm9rSKXM7GDs&libraries=visualization&callback=myMap">
+</script>
 
 </body>
 </html>

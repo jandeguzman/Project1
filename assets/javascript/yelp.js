@@ -29,6 +29,10 @@ $(document).ready(function() {
                 for (var j = 0; j < results.length; j++) {
                     div = $("<div>");
                     div.attr("class", "resturants");
+                    div.attr("data-image", results[j].image_url);
+                    div.attr("data-resturantName", results[j].name);
+                    div.attr("data-location",results[j].location.display_address);
+                    div.attr("data-url",results[j].url);
                     var image = $("<img>").attr("src", results[j].image_url).attr("class", "restaurants");
                     var p = $("<p>").text(results[j].name + " " + results[j].rating).attr("class", "restaurantNames");
                     div.append(image);

@@ -1,7 +1,5 @@
 $(".btn").on("click", function(event) {
     event.preventDefault();
-    //var event = $("#event-input").val();
-    //var area= $("#area-input").val();
     var date= $("#datepicker").val();
     var startDate= moment(date).format("YYYY-MM-DD")+"T00:00:00Z";
     console.log(startDate);
@@ -21,18 +19,25 @@ $(".btn").on("click", function(event) {
                       for(var i=0; i<20; i++) {
                         div = $("<div>");
                         div.attr("class", "events");
+                        div.attr("data-image", json._embedded.events[i].images[0].url);
+                        div.attr("data-eventName", json._embedded.events[i].name);
+                        div.attr("data-location",json._embedded.events[i]._embedded.venues[0].address.line1);
+                        div.attr("data-url",json._embedded.events[i].url);
                         var image = $("<img>").attr("src", json._embedded.events[i].images[0].url).attr("class", "eventImages");
                         var p = $("<p>").text(json._embedded.events[i].name).attr("class", "eventNames");
                         div.append(image);
                         div.append(p);
                         $("#ticketmaster").append(div);
-                        // $("#ticketmaster").append("<p class='eventNames'>"+json._embedded.events[i].name+"</p><a target='_blank' href="
-                        //   +json._embedded.events[i].url+"><img src="+json._embedded.events[i].images[0].url+" class='eventImages'></a>");
                         }
+
                     },
+
+
         error: function(xhr, status, err) {
                     // This time, we do not end up here!
                  }
-        //for more information & get Query parameters: http://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2
         });
 });
+
+
+
