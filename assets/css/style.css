@@ -413,12 +413,16 @@ section p.quote {
 #mapp {
     font-family: helvetica;
     color: white;
-    float: right;
     height: 250px;
     width: 250px;
     border: 1px solid white;
     margin-top: 20px;
     margin-left: 20px;
+
+}
+
+#main {
+float: right;
 }
 
 

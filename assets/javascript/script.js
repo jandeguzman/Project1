@@ -6,6 +6,7 @@ $(document).ready(function() {
     $(".scheduleContainer").hide();
     $(".spotifyContainer").hide();
     $(".mapContainer").hide();
+    $("iframe").hide();
 
     $(".btn").on("click", function() {
         $("#container1").hide();
@@ -21,6 +22,7 @@ $(document).ready(function() {
         $(".scheduleContainer").show();
         $(".spotifyContainer").show();
         $(".mapContainer").show();
+        $("iframe").show();
     })
 
     function w3_open() {
