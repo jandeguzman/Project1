@@ -391,7 +391,19 @@ section p.quote {
     border: solid 1px #ccc;
 }*/
 
-/*container 3*/
+/*container 3---------------------------------------------------------------------*/
+/*background image*/
+/*body {
+    padding: 0;
+    margin: 0;
+    background: url("../../images/finalBackground.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}*/
+.container3 {
+    color: white;
+}
+
 h5 {
     font-family: 'Poiret One', cursive;
     font-size: 20px;
@@ -399,9 +411,21 @@ h5 {
     margin-bottom: 20px;
 }
 
+h6 {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-size: 14px;
+    font-style: italic;
+}
+
+h1 {
+    font-family: helvetica;
+    font-weight: medium;
+    font-size: 16px;
+}
+
 .scheduleContainer {
     font-family: helvetica;
-    color: white;
 /*    float: left;*/
     height: 500px;
     width: 550px;
@@ -410,8 +434,10 @@ h5 {
     position: absolute;
     top: 0;
     width: 50%;
+    height: 100%;
     /*background-color: white;*/
-    padding-left: 30px;
+    padding-left: 50px;
+    margin-left: 50px;
 }
 
 .spotifyContainer {
@@ -439,6 +465,7 @@ h5 {
 #main {
 float: right;
 }
+
 
 
 
