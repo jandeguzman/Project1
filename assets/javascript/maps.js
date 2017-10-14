@@ -1,67 +1,72 @@
 (function() {
 
-  window.onload = function() {
+    window.onload = function() {
 
-    // Creating a new map
-    var map = new google.maps.Map(document.getElementById("mapp"), {
-          center: new google.maps.LatLng(57.9, 14.6),
-          zoom: 6,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+        // Creating a new map
+        var map = new google.maps.Map(document.getElementById("mapp"), {
+            center: new google.maps.LatLng(36, -120),
+            zoom: 6,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
 
-    // Creating the JSON data
-    var json = [
-        {
-            "title": "Stockholm",
-            "lat": 59.3,
-            "lng": 18.1,
-            "description": "<strong>Stockholm</strong> is the capital and the largest city of Sweden and constitutes the most populated urban area in Scandinavia with a population of 2.1 million in the metropolitan area (2010)"
-        },
-        {
-            "title": "Oslo",
-            "lat": 59.9,
-            "lng": 10.8,
-            "description": "<strong>Oslo</strong> is a municipality, and the capital and most populous city of Norway with a metropolitan population of 1,442,318 (as of 2010)."
-        },
-        {
-            "title": "Copenhagen",
-            "lat": 55.7,
-            "lng": 12.6,
-            "description": "<strong>Copenhagen</strong> is the capital of Denmark and its most populous city, with a metropolitan population of 1,931,467 (as of 1 January 2012)."
+        // Creating the JSON data
+        var json = [{
+                "title": "Los Angeles",
+                "lat": 34,
+                "lng": -118,
+                "description": "<strong>DTLA</strong>"
+            },
+            {
+                "title": "Taco Bar",
+                "lat": 34.03,
+                "lng": -118.03,
+                "description": "<strong>Taco Bar</strong>"
+            },
+            {
+                "title": "Staples Center",
+                "lat": 34.05,
+                "lng": -118.05,
+                "description": "<strong>Staples Center</strong>"
+            },
+            {
+                "title": "DTLA",
+                "lat": 34.01,
+                "lng": -118.01,
+                "description": "<strong>DTLA</strong>"
+            }
+        ]
+
+        // Creating a global infoWindow object that will be reused by all markers
+        var infoWindow = new google.maps.InfoWindow();
+
+        // Looping through the JSON data
+        for (var i = 0, length = json.length; i < length; i++) {
+            var data = json[i],
+                latLng = new google.maps.LatLng(data.lat, data.lng);
+
+            // Creating a marker and putting it on the map
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                title: data.title
+            });
+
+            // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
+            (function(marker, data) {
+
+                // Attaching a click event to the current marker
+                google.maps.event.addListener(marker, "click", function(e) {
+                    infoWindow.setContent(data.description);
+                    infoWindow.open(map, marker);
+                });
+
+
+            })(marker, data);
+
         }
-    ]
-
-    // Creating a global infoWindow object that will be reused by all markers
-    var infoWindow = new google.maps.InfoWindow();
-
-    // Looping through the JSON data
-    for (var i = 0, length = json.length; i < length; i++) {
-      var data = json[i],
-        latLng = new google.maps.LatLng(data.lat, data.lng);
-
-      // Creating a marker and putting it on the map
-      var marker = new google.maps.Marker({
-        position: latLng,
-        map: map,
-        title: data.title
-      });
-
-      // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
-      (function(marker, data) {
-
-        // Attaching a click event to the current marker
-        google.maps.event.addListener(marker, "click", function(e) {
-          infoWindow.setContent(data.description);
-          infoWindow.open(map, marker);
-        });
-
-
-      })(marker, data);
 
     }
-
-  }
 
 })();
 
@@ -72,7 +77,7 @@
 // var firebase = new Firebase("https://project1-2cd76.firebaseio.com");
 
 // function myMap() {
-// 		console.log('myMap')
+//    console.log('myMap')
 
 //     var mapOptions = {
 //         center: new google.maps.LatLng(51.5, -0.12),
@@ -112,34 +117,34 @@
 //                 cluster.addMarker(marker)
 
 //             })
-      // var map;
-      // function initMap() {
-      //   map = new google.maps.Map(document.getElementById('mapp'), {
-      //     zoom: 2,
-      //     center: new google.maps.LatLng(2.8,-187.3),
-      //     mapTypeId: 'terrain'
-      //   });
+// var map;
+// function initMap() {
+//   map = new google.maps.Map(document.getElementById('mapp'), {
+//     zoom: 2,
+//     center: new google.maps.LatLng(2.8,-187.3),
+//     mapTypeId: 'terrain'
+//   });
 
-      //   // Create a <script> tag and set the USGS URL as the source.
-      //   var script = document.createElement('script');
-      //   // This example uses a local copy of the GeoJSON stored at
-      //   // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-      //   script.src = 'https://project1-2cd76.firebaseio.com';
-      //   document.getElementsByTagName('location')[0].appendChild(script);
-      // }
+//   // Create a <script> tag and set the USGS URL as the source.
+//   var script = document.createElement('script');
+//   // This example uses a local copy of the GeoJSON stored at
+//   // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+//   script.src = 'https://project1-2cd76.firebaseio.com';
+//   document.getElementsByTagName('location')[0].appendChild(script);
+// }
 
-      // // Loop through the results array and place a marker for each
-      // // set of coordinates.
-      // window.eqfeed_callback = function(results) {
-      //   for (var i = 0; i < results.features.length; i++) {
-      //     var coords = results.features[i].geometry.coordinates;
-      //     var latLng = new google.maps.LatLng(coords[1],coords[0]);
-      //     var marker = new google.maps.Marker({
-      //       position: latLng,
-      //       map: map
-      //     });
-      //   }
-      // }
+// // Loop through the results array and place a marker for each
+// // set of coordinates.
+// window.eqfeed_callback = function(results) {
+//   for (var i = 0; i < results.features.length; i++) {
+//     var coords = results.features[i].geometry.coordinates;
+//     var latLng = new google.maps.LatLng(coords[1],coords[0]);
+//     var marker = new google.maps.Marker({
+//       position: latLng,
+//       map: map
+//     });
+//   }
+// }
 
 //  var config = {
 //    apiKey: "AIzaSyDfaB4IXdd-wr63RAh_B4OXA6u_B5rQkmU",

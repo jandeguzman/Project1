@@ -1,152 +1,139 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ViBELA - Intro Page</title>
-
-	<!-- link Bootstrap stylesheet -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
-	<!-- link CSS stylesheet -->
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-	<!-- Link to Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Alegreya|Dancing+Script|Poiret+One" rel="stylesheet">
-
-	<!-- Link to jQuery UI (for datepicker) -->
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ViBELA - Intro Page</title>
+    <!-- link Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- link CSS stylesheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Dancing+Script|Poiret+One" rel="stylesheet">
+    <!-- Link to jQuery UI (for datepicker) -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
+
 <body>
-<!-- Background / logo ---------------------------------------------------------------------- -->
-	<div class = "container col-md-2">
-		<img id="logo" src="images/logo.png" alt="ViBELA">
-	</div>
-
-<!-- homepage ------------------------------------------------------------------------------- -->
-	<div class="container col-md-8" id="container1">
-	  	<form class="form-inline" action="#" method="GET" id="searchform">
-	    	<div class="form-group">
-		      	<label for="query">FEELING</label>
-		      	<select class="form-control" name="query" id="query" value="Sights">
-			        <option>Laid-back</option>
-			        <option>Adventurous</option>
-			        <option>Classy</option>
-			        <option>Romantic</option>
-			        <option>Wild</option>
-			    </select>
-	   		</div>
-		    <div class="form-group">
-		      	<label for="sel2">BUDGET</label>
-		      	<select class="form-control" id="sel2">
-			        <option>Under $25</option>
-			        <option>$25-$50</option>
-			        <option>$50-$100</option>
-			        <option>Ballin' Out Tonight</option>
-		      	</select>
-		    </div>
-		    <div class="form-group">
-			    <label for="sel3">AREA</label>
-			    <select class="form-control" id="sel3">
-			        <option id="one">Downtown LA</option>
-			        <option id="two">Chinatown</option>
-			        <option id="three">Hollywood</option>
-			        <option id="four">Sunset Strip</option>
-			        <option id="five">Silverlake</option>
-			        <option id="six">Echo Park</option>
-			        <option id="seven">Santa Monica</option>
-			        <option id="eight">West Hollywood</option>
-			        <option id="nine">Long Beach</option>
-			        <option id="ten">Venice</option>
-			        <option id="eleven">West LA</option>
-			        <option id="twelve">Hermosa</option>
-			        <option id="thirteen">Malibu</option>
-			    </select>
-		    </div>
-			<div class="form-group">
-	    		<label>DATE</label>
-	                <div class='input-group date'>
-	                    <input type='text' id="datepicker" placeholder="MM/DD/YYYY"/>
-	                </div>
-		    </div>
-		</form>
-
-	    <div class="container col-md-2">
-				<button type="button" class="btn btn-default" id="submit">PLAN MY DAY ></button>
-		</div>
-
-	<!-- closing container1 div -->
-	</div> 
-
-<!-- sidebar -->
-<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-    <button id="close">Close &times;</button>
-    <button id="send">Build Itinerary</button>
-    <br>
-    <br>
-</div>
-
-<!-- results page // container 2 -->
-
-<div class="container" id="container2">
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-11">
-				<h4>Click on a picture to add it to your day's itinerary!</h4>
-			</div>
-			<div class="col-md-1">
-				<button id="sidebar">☰</button>
-			</div>
-		</div>
-	</div>
-
-<!-- YELP CONTAINER -->
-	    <div class="container resultsContainer col-md-12">
-        <div class="row">  
-        	<div class="col-md-1">
-				<img src="images/dining.png" id="dining">
-        	</div>   
-            <div class="col-md-11">         
-                <div class="content">   
-                        <div class="design" id="yelp" >
-                        </div>
+    <!-- Background / logo ---------------------------------------------------------------------- -->
+    <div class="container col-md-2">
+        <img id="logo" src="images/logo.png" alt="ViBELA">
+    </div>
+    <!-- homepage ------------------------------------------------------------------------------- -->
+    <div class="container col-md-8" id="container1">
+        <form class="form-inline" action="#" method="GET" id="searchform">
+            <div class="form-group">
+                <label for="query">FEELING</label>
+                <select class="form-control" name="query" id="query" value="Sights">
+                    <option>Laid-back</option>
+                    <option>Adventurous</option>
+                    <option>Classy</option>
+                    <option>Romantic</option>
+                    <option>Wild</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sel2">BUDGET</label>
+                <select class="form-control" id="sel2">
+                    <option>Under $25</option>
+                    <option>$25-$50</option>
+                    <option>$50-$100</option>
+                    <option>Ballin' Out Tonight</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sel3">AREA</label>
+                <select class="form-control" id="sel3">
+                    <option id="one">Downtown LA</option>
+                    <option id="two">Chinatown</option>
+                    <option id="three">Hollywood</option>
+                    <option id="four">Sunset Strip</option>
+                    <option id="five">Silverlake</option>
+                    <option id="six">Echo Park</option>
+                    <option id="seven">Santa Monica</option>
+                    <option id="eight">West Hollywood</option>
+                    <option id="nine">Long Beach</option>
+                    <option id="ten">Venice</option>
+                    <option id="eleven">West LA</option>
+                    <option id="twelve">Hermosa</option>
+                    <option id="thirteen">Malibu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>DATE</label>
+                <div class='input-group date'>
+                    <input type='text' id="datepicker" placeholder="MM/DD/YYYY" />
+                </div>
+            </div>
+        </form>
+        <div class="container col-md-2">
+            <button type="button" class="btn btn-default" id="submit">PLAN MY DAY ></button>
+        </div>
+        <!-- closing container1 div -->
+    </div>
+    <!-- sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button id="close">Close &times;</button>
+        <button id="send">Build Itinerary</button>
+        <br>
+        <br>
+    </div>
+    <!-- results page // container 2 -->
+    <div class="container" id="container2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <h4>Click on a picture to add it to your day's itinerary!</h4>
+                </div>
+                <div class="col-md-1">
+                    <button id="sidebar">☰</button>
                 </div>
             </div>
         </div>
-    </div>
-
-<!-- TICKETMASTER CONTAINER -->
-	    <div class="container resultsContainer col-md-12">
-        <div class="row">
-        	<div class="col-md-1">
-				<img src="images/events.png" id="events"> 
-        	</div>   
-            <div class="col-md-11">   
-                <div class="content">
+        <!-- YELP CONTAINER -->
+        <div class="container resultsContainer col-md-12">
+            <div class="row">
+                <div class="col-md-1">
+                    <img src="images/dining.png" id="dining">
+                </div>
+                <div class="col-md-11">
+                    <div class="content">
+                        <div class="design" id="yelp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TICKETMASTER CONTAINER -->
+        <div class="container resultsContainer col-md-12">
+            <div class="row">
+                <div class="col-md-1">
+                    <img src="images/events.png" id="events">
+                </div>
+                <div class="col-md-11">
+                    <div class="content">
                         <div class="design" id="ticketmaster">
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-<!-- FOURSQUARE CONTAINER -->
-    <div class="container resultsContainer col-md-12">
-        <div class="row">
-        	<div class="col-md-1">
-				<img src="images/sights.png" id="sights"> 
-        	</div>   
+        <!-- FOURSQUARE CONTAINER -->
+        <div class="container resultsContainer col-md-12">
+            <div class="row">
+                <div class="col-md-1">
+                    <img src="images/sights.png" id="sights">
+                </div>
                 <div class="col-md-11">
                     <div class="content">
                         <div id="venuewrapper">
                             <div id="venues" class="design">
-                            	<div class="row">
-                                	<div class="rating col-lg-12"></div>
-                            	</div>
+                                <div class="row">
+                                    <div class="rating col-lg-12"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -157,81 +144,72 @@
             </div>
         </div>
     </div>
-
-
-</div>
-
-<!-- page 3 // container 3 -->
-
-<!-- spotify playlist and map-->
-<div class="container3 col-md-12">
-<div class="row">
-<!-- column spacing -->
-		<div class="container col-md-1">
-		</div>
-
-<!-- schedule -->
-	<div class="container scheduleContainer col-md-5" id="itinerary">
-		<h5>Your Final Itinerary</h5>
-	</div>
-
-<!-- column spacing -->
-<!-- 		<div class="container col-md-1">
+    </div>
+    <!-- page 3 // container 3 -->
+    <!-- spotify playlist and map-->
+    <div class="container3 col-md-12">
+        <div class="row">
+            <!-- column spacing -->
+            <div class="container col-md-1">
+            </div>
+            <!-- schedule -->
+            <div class="container scheduleContainer col-md-5">
+                <h5>Your Final Itinerary</h5>
+                <div class="row">
+                    <div class="col-md-12" id="itinerary">
+                    </div>
+                </div>
+            </div>
+            <!-- column spacing -->
+            <!-- 		<div class="container col-md-1">
 		</div> -->
-
-<!-- spotify playlist and map-->
-			<div class="container col-md-4">
-				<br><br>
-				<div class="row">
-					<iframe src="https://open.spotify.com/embed/user/1130239796/playlist/02GircchtaVzRQvUHp4JPl" width="400" height="280" frameborder="0" allowtransparency="true"></iframe>
-				</div>
-				
-				<div class="row">
-					<div class="container mapContainer">
-					<div id="mapp" style="width:400px;height:300px"></div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-			
-
-
-<!-- column spacing -->
-	<div class="container col-md-1">
-	</div>
-
-	<br><br>
-	<div class="row">
-		<div class="col-lg-12">
-			
-		</div>
-	</div>
-
-</div>
-
-<!-- Link to moment.js -->
-<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
-<!-- Link to rapidAPI -->
-<script src="https://storage.googleapis.com/code-snippets/rapidapi.min.js"></script> 
-
-<!-- Link to jQuery -->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<!-- datepicker jquery stuff -->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<!-- Link to javascript -->
-<script type="text/javascript" src="assets/javascript/script.js"></script>
-<script type="text/javascript" src="assets/javascript/ticketmaster.js"></script>
-<script type="text/javascript" src="assets/javascript/yelp.js"></script>
-<script type="text/javascript" src="assets/javascript/foursquare.js"></script>
-<script type="text/javascript" src="assets/javascript/maps.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-<script src="http://maps.google.com/maps/api/js?key=AIzaSyBQ_8mPMsxvezjGdar8Y_tnm9rSKXM7GDs&sensor=false"></script>
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ_8mPMsxvezjGdar8Y_tnm9rSKXM7GDs&libraries=visualization&callback=initMap">
+            <!-- spotify playlist and map-->
+            <div class="container col-md-5">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="row" id="music">
+                    <iframe src="https://open.spotify.com/embed/user/1130239796/playlist/02GircchtaVzRQvUHp4JPl" width="200" height="300" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+                <div class="row">
+                    <div class="container mapContainer">
+                        <div id="mapp" style="width:300px;height:300px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- column spacing -->
+        <!-- 	<div class="container col-md-1">
+	</div> -->
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+        </div>
+    </div>
+    <!-- Link to moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Link to rapidAPI -->
+    <script src="https://storage.googleapis.com/code-snippets/rapidapi.min.js"></script>
+    <!-- Link to jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <!-- datepicker jquery stuff -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Link to javascript -->
+    <script type="text/javascript" src="assets/javascript/script.js"></script>
+    <script type="text/javascript" src="assets/javascript/ticketmaster.js"></script>
+    <script type="text/javascript" src="assets/javascript/yelp.js"></script>
+    <script type="text/javascript" src="assets/javascript/foursquare.js"></script>
+    <script type="text/javascript" src="assets/javascript/maps.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBQ_8mPMsxvezjGdar8Y_tnm9rSKXM7GDs&sensor=false"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ_8mPMsxvezjGdar8Y_tnm9rSKXM7GDs&libraries=visualization&callback=initMap">
 </script> -->
-
 </body>
+
 </html>

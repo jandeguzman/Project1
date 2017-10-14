@@ -161,10 +161,10 @@ $(document).ready(function() {
 
     $(document).on("click", "div.venue", function() {
 
-       var name = $(this).attr("data-venue");
-   var location = $(this).attr("data-location");
-   var url = $(this).attr("data-url");
-   var latlong = $(this).attr("data-latlong");
+        var name = $(this).attr("data-venue");
+        var location = $(this).attr("data-location");
+        var url = $(this).attr("data-url");
+        var latlong = $(this).attr("data-latlong");
 
         var div2 = $("<div>");
         div2.attr("id", "item-" + toDoCount).attr("data-name", "foursquare");
@@ -208,14 +208,14 @@ $(document).ready(function() {
         });
     });
 
-$("#send").on("click", function () {
-database.ref().on("value", function(snapshot) {
-   snapshot.forEach(function(childSnapshot) {
-       console.log("latlong", childSnapshot.val().latlong);
-    $("#itinerary").append("<h2>" + childSnapshot.val().name + "</h2><br><img class='eventImages' src=" + childSnapshot.val().imageName + "><br><h2>" + childSnapshot.val().location + "</h2><br><h2><a target='_blank' href=" + childSnapshot.val().url + ">More Info...</a></h2><br>");
+    $("#send").on("click", function() {
+        database.ref().on("value", function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                console.log("latlong", childSnapshot.val().latlong);
+                $("#itinerary").append("<h2>" + childSnapshot.val().name + "</h2><br><img class='eventImages' src=" + childSnapshot.val().imageName + "><br><h2>" + childSnapshot.val().location + "</h2><br><h2><a target='_blank' href=" + childSnapshot.val().url + ">More Info...</a></h2><br>");
+            });
+        });
     });
-    });
-});
 
 });
 

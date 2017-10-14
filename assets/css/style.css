@@ -409,6 +409,7 @@ h5 {
     font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
+
 }
 
 h6 {
@@ -457,8 +458,8 @@ h1 {
     height: 250px;
     width: 250px;
     border: 1px solid white;
-    margin-top: 20px;
-    margin-left: 20px;
+/*    margin-top: 20px;*/
+    margin-left: 40px;
 
 }
 
@@ -466,6 +467,19 @@ h1 {
 float: right;
 }
 
+#music{
+    float: left;
+        margin-left: 30px;
+}
+
+#itinerary{ 
+    background-color: rgba(255, 255, 255, 0.5); 
+
+    border-radius: 15px;
+    max-height: 450px;
+    overflow-y: scroll;
+
+}
 
 
 
