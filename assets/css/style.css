@@ -2,14 +2,14 @@
 body {
     padding: 0;
     margin: 0;
-	background: url("../../images/background.png");
+    background: url("../../images/background.png");
     background-size: 100%;
-	background-repeat: no-repeat;
+/*  background-repeat: no-repeat;*/
 }
 
 #logo {
-	width: 200px;
-	margin-top: 50px;
+    width: 200px;
+    margin-top: 50px;
 }
 
 /*homepage form*/
@@ -22,8 +22,8 @@ body {
 }
 
 #inputForm {
-	color: white;
-	text-align: center;
+    color: white;
+    text-align: center;
 }
 
 #datepicker {
@@ -83,35 +83,35 @@ th {
 }
 
 #query, #sel2, #sel3 {
-	height: 30px;
+    height: 30px;
 }
 
 .form-group {
-	font-family: 'Poiret One', cursive;
-	font-size: 16px;
-	margin-top: 150px;
+    font-family: 'Poiret One', cursive;
+    font-size: 16px;
+    margin-top: 150px;
 }
 
 .form-control {
-	font-family: helvetica;
-	font-size: 14px;
-	height: 30px;
+    font-family: helvetica;
+    font-size: 14px;
+    height: 30px;
 }
 
 label {
-	margin-left: 40px;
+    margin-left: 40px;
     margin-right: 10px;
-	color: white;
+    color: white;
 }
 
 /*submit button*/
 .btn {
-	font-family: 'Poiret One', cursive;
-	font-weight: bold;
-	font-size: 20px;
-	background-color: transparent;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: transparent;
     color: white;
-	height: 30px;
+    height: 30px;
     align-content: center;
     margin-top: 120px;
 }
@@ -408,7 +408,7 @@ h5 {
     font-family: 'Poiret One', cursive;
     font-size: 20px;
     text-align: center;
-    margin-bottom: 20px;
+    padding-left: 10px;
 }
 
 h6 {
@@ -416,26 +416,26 @@ h6 {
     font-weight: lighter;
     font-size: 14px;
     font-style: italic;
+    color: black;
 }
 
 h1 {
     font-family: helvetica;
-    font-weight: medium;
+    font-weight: bolder;
     font-size: 16px;
+    padding-top: 10px;
+    color: black;
 }
 
 .scheduleContainer {
     font-family: helvetica;
-/*    float: left;*/
     height: 500px;
     width: 550px;
-/*    border: 1px solid white;*/
     margin-top: 20px;
     position: absolute;
     top: 0;
-    width: 50%;
-    height: 100%;
-    /*background-color: white;*/
+/*    width: 50%;
+    height: 100%;*/
     padding-left: 50px;
     margin-left: 50px;
 }
@@ -445,27 +445,48 @@ h1 {
     color: white;
     float: right;
     height: 250px;
-    width: 250px;
+    width: 400px;
     border: 1px solid white;
-    margin-top: 20px;
-    margin-left: 20px;
+/*    margin-top: 50px;
+    margin-left: 40px;*/
 }
 
 #mapp {
-    font-family: helvetica;
+/*    font-family: helvetica;
     color: white;
     height: 250px;
-    width: 250px;
-    border: 1px solid white;
-    margin-top: 20px;
-    margin-left: 20px;
+    width: 250px;*/
+/*    border: 1px solid white;*/
+    margin-top: 40px;
+    margin-left: 80px;
 
+}
+
+#playlistAndMap {
+    margin-top: 20px;
+    margin-left: 180px;
 }
 
 #main {
 float: right;
 }
 
+#music{
+    float: left;
+    margin-top: 40px;
+    margin-left: 60px;
+}
+
+#itinerary{ 
+/*    background-color: rgba(255, 255, 255, 0.5); */
+    border-radius: 15px;
+    max-height: 500px;
+    overflow-y: scroll;
+    margin-top: 20px;
+    margin-left: 50px;
+    background: url(../../images/finalBackground.png);
+    background-size: cover;
+}
 
 
 
