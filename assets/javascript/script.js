@@ -209,7 +209,7 @@ $(document).ready(function() {
     });
 
     database.ref().on("child_added", function(childSnapshot) {
-        $("#itinerary").append("<h2>" + childSnapshot.val().name + "</h2><br><img class='eventImages' src=" + childSnapshot.val().imageName + "><h2>" + childSnapshot.val().location + "</h2><br><h2><a target='_blank' href=" + childSnapshot.val().url + ">More Info...</a></h2>");
+        $("#itinerary").append("<h1>" + childSnapshot.val().name + "</h1><img class='eventImages' src=" + childSnapshot.val().imageName + "><h6>" + childSnapshot.val().location + "</h6><h6><a target='_blank' href=" + childSnapshot.val().url + ">More Info...</a></h6><br>");
     });
 });
 datepicker();

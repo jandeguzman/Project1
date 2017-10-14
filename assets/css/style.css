@@ -307,13 +307,14 @@ section p.quote {
 #mySidebar {
     position: absolute;
     right: 0;
-    margin-right: 80px;
+/*    margin-right: 80px;*/
     top: 0;
-    margin-top: 100px;
+/*    margin-top: 100px;*/
     height: 1000px;
-    background-color: (0, 0, 0, 0.3);
-    width: 300px;
-    height: 500px;
+    background-color: #2d2d2d;
+    width: 250px;
+    height: 800px;
+    color: black;
 }
 
 /*sidebar button*/
@@ -335,8 +336,8 @@ section p.quote {
     font-family: helvetica;
     font-weight: lighter;
     font-size: 13px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     border: white;
     position: absolute;
     top: 0;
@@ -359,6 +360,7 @@ section p.quote {
     left: 0;
     margin-left: 10px;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding: 5px;
 }
 
@@ -370,6 +372,7 @@ section p.quote {
     color: black;
     border: none;
     margin: 10px;
+    width: 30px;
 }
 
 /*#mapcontainer {
@@ -388,15 +391,53 @@ section p.quote {
     border: solid 1px #ccc;
 }*/
 
-/*container 3*/
+/*container 3---------------------------------------------------------------------*/
+/*background image*/
+/*body {
+    padding: 0;
+    margin: 0;
+    background: url("../../images/finalBackground.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}*/
+.container3 {
+    color: white;
+}
+
+h5 {
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h6 {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-size: 14px;
+    font-style: italic;
+}
+
+h1 {
+    font-family: helvetica;
+    font-weight: medium;
+    font-size: 16px;
+}
+
 .scheduleContainer {
     font-family: helvetica;
-    color: white;
-    float: left;
+/*    float: left;*/
     height: 500px;
     width: 550px;
-    border: 1px solid white;
+/*    border: 1px solid white;*/
     margin-top: 20px;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    /*background-color: white;*/
+    padding-left: 50px;
+    margin-left: 50px;
 }
 
 .spotifyContainer {
@@ -424,6 +465,7 @@ section p.quote {
 #main {
 float: right;
 }
+
 
 
 
