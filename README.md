@@ -1,7 +1,8 @@
 # Project1
 
 Project Title: VibeLA - Plan the perfect day for any group vibe 
-https://shararsh.github.io/Project1/
+
+https://jandeguzman.github.io/VibeLA/
 
 VibeLA was built with the goal of enabling easier coordination and planning for groups that wanted to explore the city. Initially focused on LA, we wanted the app to give the most up to date information on where to eat, what to see and what to do so both locals and visitors alike would experience the city in a new light. Using the app is very simple, drilled down to 3 easy steps: enter your group preferences, view results and finalize itinerary. The information you put in, such as your group vibe, date of availability, budget and location will determine the results presented to you. A user can then select from the choices and build the itinerary. The end result is a great time with friends or family. 
 
@@ -17,7 +18,7 @@ Deployment
 
     Application doesn't need additinal installation. Deplyoment can be done in two ways:
         1. Save to local storage - download the zip file and open index.html to begin using
-        2. Click on the link: provided above
+        2. Click on the link: https://jandeguzman.github.io/VibeLA/
 
 Built With 
 
